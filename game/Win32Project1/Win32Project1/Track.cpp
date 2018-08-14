@@ -67,9 +67,11 @@ void Track::Init(int x)
 
 	float totalPlayingSec = GameSystem::GetInstance()->GetTotalPlayingTime() / 1000.0f;
 	float startNoteSec = 1.0f;
+
 	while (startNoteSec < totalPlayingSec)
 	{
 
+		// 여기에 하나씩 추가 
 		Note* note = new Note(startNoteSec, judgeLineOffset, x);
 		_noteList.Append(note);
 

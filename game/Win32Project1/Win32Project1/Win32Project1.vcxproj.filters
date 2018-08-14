@@ -87,6 +87,9 @@
     <ClCompile Include="Node.cpp">
       <Filter>소스 파일\Scene\Game</Filter>
     </ClCompile>
+    <ClCompile Include="BMSParsing.cpp">
+      <Filter>소스 파일\BMS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>소스 파일\Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="BMSParsing.h">
+      <Filter>소스 파일\BMS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

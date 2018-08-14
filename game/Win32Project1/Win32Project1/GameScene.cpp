@@ -46,7 +46,7 @@ void GameScene::Init()
 	_track = new Track();
 	_track->Init();
 	*/
-	int trackCount =5;
+	int trackCount =7;
 	_trackArray = new Array<Track*>(trackCount);
 	
 	int startX = 300;
@@ -58,8 +58,6 @@ void GameScene::Init()
 		track->Init(x);
 		_trackArray->Set(i, track);
 	}
-
-
 
 	_gameDuration = 0;
 

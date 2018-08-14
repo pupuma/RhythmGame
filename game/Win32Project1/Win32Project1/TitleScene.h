@@ -3,7 +3,7 @@
 #include "Scene.h"
 
 class Sprite;
-class BMSParser;
+class BMSParsing;
 
 
 
@@ -11,7 +11,7 @@ class TitleScene
 	: public Scene
 {
 private:
-	BMSParser* _bms;
+	BMSParsing* _bms;
 
 public:
 	TitleScene();

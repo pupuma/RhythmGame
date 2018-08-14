@@ -4,11 +4,12 @@
 #include "TitleScene.h"
 #include "GameSystem.h"
 #include "SceneManager.h"
-//#include "BMSParser.h"
+#include "BMSParsing.h"
 
 TitleScene::TitleScene()
 {
 	printf("TitleScene.\n");
+	printf("Parsing");
 }
 TitleScene::~TitleScene()
 {
@@ -20,7 +21,7 @@ void TitleScene::Init()
 	_backgroundSprite->SetPosition(GameSystem::GetInstance()->GetWindowWidth() / 2,
 		GameSystem::GetInstance()->GetWindowHeight() / 2);
 
-	//_bms = new BMSParser("_sp_chilltrap_00_blank");
+	_bms = new BMSParsing("_sp_chilltrap_00_blank");
 
 }
 void TitleScene::Update(int deltaTime)

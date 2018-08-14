@@ -1,13 +1,11 @@
 #pragma once
 
 class Sprite;
-class BMSParser;
 
 class Note
 {
 private:
 	Sprite* _sprite;
-	BMSParser* _bms;
 	int _updateDuration;
 	int _x;
 	int _y;
