@@ -7,7 +7,7 @@
 Texture::Texture(const char* fileName)
 {
 	char filePath[256];
-	sprintf(filePath, "../Resources/images/%s", fileName);
+	sprintf_s(filePath, "../Resources/images/%s", fileName);
 
 	//_texture = IMG_LoadTexture(GameSystem::GetInstance()->GetRenderer(), filePath);
 	// ResourceManager´Â ½Ì±ÛÅÏ

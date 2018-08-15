@@ -9,7 +9,7 @@
 TitleScene::TitleScene()
 {
 	printf("TitleScene.\n");
-	printf("Parsing");
+	printf("Parsing \n");
 }
 TitleScene::~TitleScene()
 {

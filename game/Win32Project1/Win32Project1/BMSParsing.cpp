@@ -10,11 +10,12 @@ BMSParsing::BMSParsing(const char* FileName)
 	{
 		// 
 		char filePath[256];
-		sprintf(filePath, "../Resources/BMS/_sp_chilltrap_/%s.bmx", FileName);
+		sprintf_s(filePath, "../Resources/BMS/_sp_chilltrap_/%s.bmx", FileName);
 
-		std::string sRecord;
+		std::string sBuffer;
 		std::queue<std::string> q_data;
 		std::ifstream inFile(filePath);
+
 
 		
 		if (!inFile.is_open())
@@ -23,13 +24,31 @@ BMSParsing::BMSParsing(const char* FileName)
 		}
 
 		
-		while (getline(inFile, sRecord))
+		while (getline(inFile, sBuffer))
 		{
-			std::cout << sRecord << std::endl;
+			//std::cout << sBuffer << std::endl;
+			q_data.push(sBuffer);
 		}
 
-
 		inFile.close();
+
+		// Data
+		while (!q_data.empty())
+		{
+			
+			// Info
+
+
+			//WAV
+			if (q_data.front().substr(0, 4) == "#WAV")
+			{
+				std::cout << q_data.front() << std::endl;
+
+			}
+			q_data.pop();
+
+			
+		}
 
 	}
 
