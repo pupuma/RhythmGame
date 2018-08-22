@@ -84,9 +84,6 @@
     <ClCompile Include="LogoScene.cpp">
       <Filter>소스 파일\Scene\Logo</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>소스 파일\Scene\Game</Filter>
-    </ClCompile>
     <ClCompile Include="BMSParsing.cpp">
       <Filter>소스 파일\BMS</Filter>
     </ClCompile>
@@ -136,9 +133,6 @@
     </ClInclude>
     <ClInclude Include="ResultScene.h">
       <Filter>소스 파일\Scene\Result</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>소스 파일\Scene\Game</Filter>
     </ClInclude>
     <ClInclude Include="BMSParsing.h">
       <Filter>소스 파일\BMS</Filter>

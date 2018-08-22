@@ -70,6 +70,10 @@ void Track::Init(int x)
 
 	while (startNoteSec < totalPlayingSec)
 	{
+		//=================== 노드 하나씩 추가 
+		/*
+		트랙 번호가 일경우에만 -> 
+		*/
 
 		// 여기에 하나씩 추가 
 		Note* note = new Note(startNoteSec, judgeLineOffset, x);
@@ -82,13 +86,13 @@ void Track::Init(int x)
 			startNoteSec += 0.25f;
 			break;
 		case 1:
-			//startNoteSec += 0.5f;
+			startNoteSec += 0.5f;
 			break;
 		case 2:
-			//startNoteSec += 0.75f;
+			startNoteSec += 0.75f;
 			break;
 		case 3:
-			//startNoteSec += 1.0f;
+			startNoteSec += 1.0f;
 			break;
 		}
 	}

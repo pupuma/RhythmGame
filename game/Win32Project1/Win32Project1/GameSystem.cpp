@@ -44,6 +44,7 @@ int GameSystem::GetTotalPlayingTime()
 {
 	return 60 *1000 * 3 ;
 	//return 40000;
+	//return 60 * 100;
 }
 
 void GameSystem::SetTrackHeight(int trackHeight)
