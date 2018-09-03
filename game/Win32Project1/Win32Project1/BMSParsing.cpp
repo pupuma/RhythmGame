@@ -10,7 +10,7 @@ BMSParsing::BMSParsing(const char* FileName)
 	{
 		// 
 		char filePath[256];
-		sprintf_s(filePath, "../Resources/BMS/_sp_chilltrap_/%s.bmx", FileName);
+		sprintf_s(filePath, "../Resources/BMS/Blood Tales/%s.bms", FileName);
 
 		std::string sBuffer;
 		std::queue<std::string> q_data;

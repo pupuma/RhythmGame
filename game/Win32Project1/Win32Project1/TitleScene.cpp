@@ -21,8 +21,8 @@ void TitleScene::Init()
 	_backgroundSprite->SetPosition(GameSystem::GetInstance()->GetWindowWidth() / 2,
 		GameSystem::GetInstance()->GetWindowHeight() / 2);
 
-	_bms = new BMSParsing("_sp_chilltrap_00_blank");
-
+	_bms = new BMSParsing("BT 5Hard");
+	
 }
 void TitleScene::Update(int deltaTime)
 {

@@ -1,5 +1,12 @@
 #pragma once
 
+enum eNoteType
+{
+	NOTE_NONE,						// ±‚∫ª
+	NOTE_TRANSPARENT,				// ≈ı∏Ì
+	NOTE_LONG,						// ∑’ 
+};
+
 class Sprite;
 
 class Note

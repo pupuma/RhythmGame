@@ -103,6 +103,39 @@ void Track::Init(int x)
 
 }
 
+void Track::Init(int x, int index)
+{
+	int judgeLineOffset = 100;
+
+	// 이미지 초기화 
+	_backgroundSprite = new Sprite("trackspr", true);
+	_backgroundSprite->SetPosition(x,
+		GameSystem::GetInstance()->GetWindowHeight() / 2);
+
+	_judgeLineSprite = new Sprite("judgelinespr", true);
+	_judgeLineSprite->SetPosition(x,
+		GameSystem::GetInstance()->GetWindowHeight() - judgeLineOffset);
+
+	_explosionSprite = new Sprite("successeffectspr", false);
+	_explosionSprite->SetPosition(x,
+		GameSystem::GetInstance()->GetWindowHeight() - judgeLineOffset);
+
+	_failEffectSprite = new Sprite("faileffectspr", false);
+	_failEffectSprite->SetPosition(x,
+		GameSystem::GetInstance()->GetWindowHeight() / 2);
+
+	float totalPlayingSec = GameSystem::GetInstance()->GetTotalPlayingTime() / 1000.0f;
+	float startNoteSec = 1.0f;
+
+	// 노드 추가 
+
+	//
+	int judgeTick = GameSystem::GetInstance()->GetTotalPlayingTime();
+	_judgeStartTick = judgeTick - 100;
+	_judgeEndTick = judgeTick + 100;
+
+}
+
 void Track::Update(int deltaTime)
 {
 	_backgroundSprite->Update(deltaTime);

@@ -25,6 +25,7 @@ public:
 	~Track();
 
 	void Init(int x);
+	void Init(int x, int index);
 	void Update(int deltaTime);
 	void Render();
 	void Deinit();
