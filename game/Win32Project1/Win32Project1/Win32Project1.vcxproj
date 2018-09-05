@@ -152,6 +152,7 @@
     <ClCompile Include="GameSystem.cpp" />
     <ClCompile Include="LogoScene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MusicNode.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResultScene.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSystem.h" />
     <ClInclude Include="LogoScene.h" />
+    <ClInclude Include="MusicNode.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResultScene.h" />

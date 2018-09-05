@@ -7,6 +7,10 @@
 
 #include "Track.h"
 
+//
+#include "Album.h"
+#include "MusicNode.h"
+
 Track::Track()
 {
 	_score = 0;
@@ -68,12 +72,20 @@ void Track::Init(int x)
 	float totalPlayingSec = GameSystem::GetInstance()->GetTotalPlayingTime() / 1000.0f;
 	float startNoteSec = 1.0f;
 
+
+	// 앨범 노드 리스트 가져온다.
+	_album = new Album();
+	_nodeList = _album->GetMusicNodeList();
 	while (startNoteSec < totalPlayingSec)
 	{
 		//=================== 노드 하나씩 추가 
 		/*
 		트랙 번호가 일경우에만 -> 
 		*/
+
+
+		
+
 
 		// 여기에 하나씩 추가 
 		Note* note = new Note(startNoteSec, judgeLineOffset, x);

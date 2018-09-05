@@ -4,7 +4,8 @@
 
 class Sprite;
 class Note;
-
+class MusicNode;
+class Album;
 
 class Track
 {
@@ -14,7 +15,8 @@ private:
 	int _score;
 private:
 	DLinkedList<Note*> _noteList;
-	
+	DLinkedList<MusicNode*> _nodeList;
+	Album* _album;
 
 	Sprite* _backgroundSprite;
 	Sprite* _judgeLineSprite;
