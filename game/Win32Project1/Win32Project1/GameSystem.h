@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SDL.h"
+class Album;
 
 class GameSystem
 {
@@ -29,12 +30,18 @@ public:
 	void SetFinalScore(int score);
 	int GetFinalScore();
 
-
-
 private:
 	SDL_Renderer* _sdlRenderer;
 
 public:
 	void SetRenderer(SDL_Renderer* sdlRenderer);
 	SDL_Renderer* GetRenderer();
+
+	// Album
+private:
+	Album* _album;
+public:
+	void InitAlbum();
+	Album* GetAlbum();
+
 };

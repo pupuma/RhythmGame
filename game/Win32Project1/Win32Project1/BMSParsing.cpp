@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 
+#include "Album.h"
+#include "GameSystem.h"
+
 BMSParsing::BMSParsing(const char* FileName)
 {
 	// Parsing 
@@ -61,6 +64,9 @@ BMSParsing::BMSParsing(const char* FileName)
 
 		std::string sToken;
 
+		Album* album = GameSystem::GetInstance()->GetAlbum();
+
+
 		while (!q_data.empty())
 		{
 			// 
@@ -73,55 +79,55 @@ BMSParsing::BMSParsing(const char* FileName)
 				{
 					sToken = sRecord.substr(7);
 					iPlayerCount = atoi(sToken.c_str());
-					std::cout << "playerCount : " << iPlayerCount << std::endl;
+				//	std::cout << "playerCount : " << iPlayerCount << std::endl;
 				}
 				else if (sRecord.substr(1, 5) == "GENRE")
 				{
 					sToken = sRecord.substr(6);
 					sGenre = sToken;
-					std::cout << "Genre : " << sGenre << std::endl;
+				//	std::cout << "Genre : " << sGenre << std::endl;
 				}
 				else if (sRecord.substr(1, 5) == "TITLE")
 				{
 					sToken = sRecord.substr(6);
 					sTitle = sToken;
-					std::cout << "Title : " << sTitle << std::endl;
+				//	std::cout << "Title : " << sTitle << std::endl;
 				}
 				else if (sRecord.substr(1, 6) == "ARTIST")
 				{
 					sToken = sRecord.substr(7);
 					sArtist = sToken;
-					std::cout << "Artist : " << sArtist << std::endl;
+				//	std::cout << "Artist : " << sArtist << std::endl;
 				}
 				else if (sRecord.substr(1, 3) == "BPM")
 				{
 					sToken = sRecord.substr(4);
 					iBpm = atoi(sToken.c_str());
-					std::cout << "BPM : " << iBpm << std::endl;
+				//	std::cout << "BPM : " << iBpm << std::endl;
 				}
 				else if (sRecord.substr(1, 9) == "PLAYLEVEL")
 				{
 					sToken = sRecord.substr(10);
 					iPlayLevel = atoi(sToken.c_str());
-					std::cout << "PlayLevel : " << iPlayLevel << std::endl;
+					//std::cout << "PlayLevel : " << iPlayLevel << std::endl;
 				}
 				else if (sRecord.substr(1, 4) == "RANK")
 				{
 					sToken = sRecord.substr(5);
 					iPlayLevel = atoi(sToken.c_str());
-					std::cout << "Rank : " << iPlayLevel << std::endl;
+					//std::cout << "Rank : " << iPlayLevel << std::endl;
 				}
 				else if (sRecord.substr(1, 5) == "TOTAL")
 				{
 					sToken = sRecord.substr(6);
 					iTotal = atoi(sToken.c_str());
-					std::cout << "Total : " << iTotal << std::endl;
+					//std::cout << "Total : " << iTotal << std::endl;
 				}
 				else if (sRecord.substr(1, 9) == "STAGEFILE")
 				{
 					sToken = sRecord.substr(10);
 					sStageFile = sToken;
-					std::cout << "StageFileName : " << sStageFile << std::endl;
+					//std::cout << "StageFileName : " << sStageFile << std::endl;
 				}
 				else if (sRecord.substr(1, 3) == "BMP")
 				{
@@ -129,25 +135,25 @@ BMSParsing::BMSParsing(const char* FileName)
 					sBmp = sToken;
 					sToken = sRecord.substr(4, 2);
 					iBmpNumber = atoi(sToken.c_str());
-					std::cout << "BMP [ " << iBmpNumber << " ] : " << sBmp << std::endl;
+				//	std::cout << "BMP [ " << iBmpNumber << " ] : " << sBmp << std::endl;
 				}
 				else if (sRecord.substr(1, 10) == "DIFFICULTY")
 				{
 					sToken = sRecord.substr(11);
 					iDifficulty = atoi(sToken.c_str());
-					std::cout << " Difficulty : " << iDifficulty << std::endl;
+					//std::cout << " Difficulty : " << iDifficulty << std::endl;
 				}
 				else if (sRecord.substr(1, 6) == "BANNER")
 				{
 					sToken = sRecord.substr(7);
 					sBanner = sToken;
-					std::cout << " Banner : " << sBanner << std::endl;
+					//std::cout << " Banner : " << sBanner << std::endl;
 				}
 				else if (sRecord.substr(1, 9) == "SUBARTIST")
 				{
 					sToken = sRecord.substr(10);
 					sSubArtist = sToken;
-					std::cout << " SubArtist : " << sSubArtist << std::endl;
+					//std::cout << " SubArtist : " << sSubArtist << std::endl;
 				}
 				else if (sRecord.substr(1, 3) == "WAV")
 				{
@@ -155,7 +161,9 @@ BMSParsing::BMSParsing(const char* FileName)
 					sWavIndex = sToken;
 					sToken = sRecord.substr(7);
 					sWavName = sToken;
-					std::cout << " Wav [ " << sWavIndex << " ] : " << sWavName << std::endl;
+					album->AddWav(sWavIndex, sWavName);
+					//std::cout << " Wav [ " << sWavIndex << " ] : " << sWavName << std::endl;
+
 				}
 				else
 				{
@@ -166,14 +174,18 @@ BMSParsing::BMSParsing(const char* FileName)
 					sChannelIndex = sToken;
 					sToken = sRecord.substr(7);
 					sMusicData = sToken;
-					std::cout << "MusicNode [ " << iMusicNode << " ] " <<
-						" ChannelIndex [ " << sChannelIndex << " ] : " <<
-						sMusicData << std::endl;
+					//std::cout << "MusicNode [ " << iMusicNode << " ] " <<
+					//	" ChannelIndex [ " << sChannelIndex << " ] : " <<
+					//	sMusicData << std::endl;
 
 				}
 			}
 			q_data.pop();
 		}
+
+
+		album->Init(sGenre, sTitle, sArtist, sStageFile, sBmp, sBanner, sSubArtist,
+			iPlayerCount, iBpm, iPlayLevel, iRank, iTotal, iBmpNumber, iDifficulty);
 
 	}
 
@@ -182,3 +194,4 @@ BMSParsing::~BMSParsing()
 {
 
 }
+

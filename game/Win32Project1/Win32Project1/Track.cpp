@@ -74,8 +74,8 @@ void Track::Init(int x)
 
 
 	// 앨범 노드 리스트 가져온다.
-	_album = new Album();
-	_nodeList = _album->GetMusicNodeList();
+	//_album = new Album();
+	//_nodeList = _album->GetMusicNodeList();
 	while (startNoteSec < totalPlayingSec)
 	{
 		//=================== 노드 하나씩 추가 

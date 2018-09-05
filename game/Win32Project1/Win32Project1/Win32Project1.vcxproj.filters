@@ -96,6 +96,9 @@
     <ClCompile Include="Track.cpp">
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Wave.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -150,6 +153,9 @@
       <Filter>소스 파일\Object</Filter>
     </ClInclude>
     <ClInclude Include="Track.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Wave.h">
       <Filter>소스 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>

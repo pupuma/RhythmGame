@@ -1,4 +1,5 @@
 #include "GameSystem.h"
+#include "Album.h"
 
 GameSystem* GameSystem::_instance = 0;
 
@@ -75,4 +76,15 @@ void GameSystem::SetRenderer(SDL_Renderer* sdlRenderer)
 SDL_Renderer* GameSystem::GetRenderer()
 {
 	return _sdlRenderer;
+}
+
+
+void GameSystem::InitAlbum()
+{
+	_album = new Album();
+}
+
+Album* GameSystem::GetAlbum()
+{
+	return _album;
 }

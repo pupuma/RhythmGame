@@ -24,6 +24,8 @@ void LogoScene::Init()
 		GameSystem::GetInstance()->GetWindowHeight() / 2);
 
 	int finalScore = GameSystem::GetInstance()->GetFinalScore();
+	GameSystem::GetInstance()->InitAlbum();
+
 }
 void LogoScene::Update(int deltaTime)
 {

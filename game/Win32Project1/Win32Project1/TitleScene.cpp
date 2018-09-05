@@ -23,6 +23,9 @@ void TitleScene::Init()
 
 	_bms = new BMSParsing("BT 5Hard");
 	
+	// 앨범에서 처리한다.?
+	
+	
 }
 void TitleScene::Update(int deltaTime)
 {
