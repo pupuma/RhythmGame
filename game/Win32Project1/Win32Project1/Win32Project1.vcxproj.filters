@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\BMS">
       <UniqueIdentifier>{e4f6ebb2-c789-4d8f-b1f5-e3011797a73a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{d2a0f827-8281-4a23-85f4-c48fbee73862}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,12 +66,6 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>소스 파일\Scene\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Note.cpp">
-      <Filter>소스 파일\Scene\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Track.cpp">
-      <Filter>소스 파일\Scene\Game</Filter>
-    </ClCompile>
     <ClCompile Include="TitleScene.cpp">
       <Filter>소스 파일\Scene\Title</Filter>
     </ClCompile>
@@ -88,7 +85,13 @@
       <Filter>소스 파일\BMS</Filter>
     </ClCompile>
     <ClCompile Include="Album.cpp">
-      <Filter>소스 파일\Scene\Game</Filter>
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Note.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Track.cpp">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,13 +116,7 @@
     <ClInclude Include="Font.h">
       <Filter>소스 파일\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Track.h">
-      <Filter>소스 파일\Scene\Game</Filter>
-    </ClInclude>
     <ClInclude Include="GameScene.h">
-      <Filter>소스 파일\Scene\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Note.h">
       <Filter>소스 파일\Scene\Game</Filter>
     </ClInclude>
     <ClInclude Include="TitleScene.h">
@@ -141,7 +138,13 @@
       <Filter>소스 파일\BMS</Filter>
     </ClInclude>
     <ClInclude Include="Album.h">
-      <Filter>소스 파일\Scene\Game</Filter>
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Note.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Track.h">
+      <Filter>소스 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

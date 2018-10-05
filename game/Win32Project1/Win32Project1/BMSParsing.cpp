@@ -169,14 +169,21 @@ BMSParsing::BMSParsing(const char* FileName)
 					std::cout << "MusicNode [ " << iMusicNode << " ] " <<
 						" ChannelIndex [ " << sChannelIndex << " ] : " <<
 						sMusicData << std::endl;
+					//1.
+					// 여기서 노트를 백터에 넣는다? 
+					// Node? -> 001/ 002/ 003/ 004 / 005/ ..../
+					// 노드 별로 배치
 
+					// 2.
+					// 배경음 트랙 
 				}
 			}
 			q_data.pop();
 		}
 
-	}
 
+		
+	}
 }
 BMSParsing::~BMSParsing()
 {

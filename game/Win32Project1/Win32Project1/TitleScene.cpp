@@ -40,7 +40,7 @@ void TitleScene::KeyDown(unsigned int keyCode)
 {
 	switch (keyCode)
 	{
-	case SDLK_SPACE:
+	case SDLK_RETURN:
 		SceneManager::GetInstance()->ChangeScene(eScene::SCENE_GAME);
 		break;
 	}
@@ -49,7 +49,7 @@ void TitleScene::KeyUp(unsigned int keyCode)
 {
 	switch (keyCode)
 	{
-	case SDLK_SPACE:
+	case SDLK_RETURN:
 		SceneManager::GetInstance()->ChangeScene(eScene::SCENE_GAME);
 		break;
 	}
