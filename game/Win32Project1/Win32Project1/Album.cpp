@@ -1,4 +1,5 @@
 #include "Game.h"
+
 #include "Album.h"
 
 Album::Album()
@@ -36,9 +37,36 @@ void Album::AddAlbumWav(std::string _wavIndex, std::string _wavName)
 
 void Album::AddMusicData(int _musicNode, std::string _channelIndex, std::string _musicData)
 {
-	musicData.iMusicNode = _musicNode;
-	musicData.sChannelIndex = _channelIndex;
-	musicData.sMusicData = _musicData;
+	musicData = new tagMusicData();
+	musicData->iMusicNode = _musicNode;
+	musicData->sChannelIndex = _channelIndex;
+	musicData->sMusicData = _musicData;
 
-	q_MusicDataList.push(musicData);
+	vMusicDataList.push_back(musicData);
 }
+
+int Album::GetMusicNodeSize()
+{
+	int iCount = 0;
+	int totalCount = 0;
+	if (!vMusicDataList.empty())
+	{
+		int iStartNum = vMusicDataList[0]->iMusicNode;
+		int iEndNum = vMusicDataList[(vMusicDataList.size() -1)]->iMusicNode;
+
+		if (0 == iStartNum)
+		{
+			iStartNum = 1;
+		}
+
+		totalCount = iEndNum + iStartNum;
+	}
+	
+	return totalCount;
+}
+
+int Album::GetAlbumBpm()
+{
+	return iBpm;
+}
+

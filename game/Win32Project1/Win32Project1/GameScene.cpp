@@ -29,6 +29,9 @@ GameScene::~GameScene()
 
 void GameScene::Init()
 {
+	//
+
+
 	_backgroundSprite = new Sprite("backgroundspr", true);
 	_backgroundSprite->SetPosition(GameSystem::GetInstance()->GetWindowWidth() / 2,
 		GameSystem::GetInstance()->GetWindowHeight() / 2);
@@ -59,8 +62,8 @@ void GameScene::Init()
 		// 트랙 위치 ( i * 트랙 간 사이 범위 ) 
 		int x = startX + (i * 130) + 15;
 		Track* track = new Track();
-		//track->Init(x,i);					// 트랙 번호 
-		track->Init(x);
+		track->Init(x,i);					// 트랙 번호 
+		//track->Init(x);
 		_trackArray->Set(i, track);
 	}
 

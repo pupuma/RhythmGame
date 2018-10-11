@@ -4,10 +4,12 @@
 
 class Sprite;
 class Note;
-
+class Album;
 
 class Track
 {
+private:
+	Album* _album;
 private:
 	int _judgeStartTick;
 	int _judgeEndTick;

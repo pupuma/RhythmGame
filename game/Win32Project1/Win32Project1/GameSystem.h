@@ -2,6 +2,8 @@
 
 #include "SDL.h"
 
+class Album;
+
 class GameSystem
 {
 private:
@@ -10,7 +12,7 @@ private:
 private:
 	static GameSystem* _instance;
 	int _finalScore;
-
+	Album* album;
 public:
 	static GameSystem* GetInstance();
 	
@@ -37,4 +39,6 @@ private:
 public:
 	void SetRenderer(SDL_Renderer* sdlRenderer);
 	SDL_Renderer* GetRenderer();
+	void SetAlbum(Album* _album) { album = _album; }
+	Album* GetAlbum() { return album; }
 };

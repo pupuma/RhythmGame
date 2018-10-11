@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+
+#include "Game.h"
 
 #include "GameSystem.h"
 #include "Note.h"
@@ -18,6 +20,7 @@ Track::Track()
 	_explosionSprite = NULL;
 	_failEffectSprite = NULL;
 	_isKeyDown = false;
+	_album = GameSystem::GetInstance()->GetAlbum();
 }
 
 Track::~Track()
@@ -127,10 +130,27 @@ void Track::Init(int x, int index)
 	_failEffectSprite->SetPosition(x,
 		GameSystem::GetInstance()->GetWindowHeight() / 2);
 
-	float totalPlayingSec = GameSystem::GetInstance()->GetTotalPlayingTime() / 1000.0f;
+	int totalMusicNodeSize = _album->GetMusicNodeSize();
+	float totalPlayingSec = (static_cast<float>(static_cast<float>(totalMusicNodeSize * 4 * 60) / static_cast<float>(_album->GetAlbumBpm())) * 1000.f);
+	
 	float startNoteSec = 1.0f;
 
 	// 노드 추가 
+	switch (index)
+	{
+	case 0:
+		break;
+	case 1:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	}
 
 	//
 	int judgeTick = GameSystem::GetInstance()->GetTotalPlayingTime();

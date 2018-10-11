@@ -13,6 +13,7 @@ class GameScene
 private:
 	//Track* _track;
 	Array<Track*>* _trackArray;
+	
 	//Sprite* _backgroundSprite;
 	Font* _text;
 	
@@ -32,3 +33,4 @@ public:
 	void KeyDown(unsigned int keyCode);
 	void KeyUp(unsigned int keyCode);
 };
+

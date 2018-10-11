@@ -11,9 +11,11 @@ private:
 	};
 
 private:
+	std::vector<tagMusicData*> vMusicDataList;
 	std::queue<tagMusicData> q_MusicDataList;
+	
 private:
-	tagMusicData musicData;
+	tagMusicData* musicData;
 	// MusicAlbum Info
 	int iPlayerCount;
 	std::string sGenre;
@@ -44,9 +46,12 @@ public:
 
 	// 
 	void AddAlbumWav(std::string _wavIndex, std::string _wavName);
-
 	void AddMusicData(int _musicNode, std::string _channelIndex, std::string _musicData);
-
-	std::queue<tagMusicData> GetQueTest() { return q_MusicDataList; }
+public:
+	// ¸¶µð °¹¼ö 
+	int GetMusicNodeSize();
+	int GetAlbumBpm();
+public:
+	std::vector<tagMusicData*> GetQueTest() { return vMusicDataList; }
 	std::map<std::string, std::string> GetMusicWaveList() { return mWavList; }
 };

@@ -3,6 +3,7 @@
 
 #include <fstream>	
 #include "Album.h"
+#include "GameSystem.h"
 
 BMSParsing::BMSParsing(const char* FileName)
 {
@@ -195,10 +196,11 @@ BMSParsing::BMSParsing(const char* FileName)
 			iTotal, sStageFile, sBmp, 
 			iBmpNumber, iDifficulty, sBanner,sSubArtist);
 
-		//std::cout << album->GetQueTest().size() << std::endl;
-		//std::cout << album->GetMusicWaveList().size() << std::endl;
+		std::cout << album->GetQueTest().size() << std::endl;
+		std::cout << album->GetMusicWaveList().size() << std::endl;
 	}
 	//
+	GameSystem::GetInstance()->SetAlbum(album);
 }
 BMSParsing::~BMSParsing()
 {
