@@ -1,8 +1,8 @@
+#include "Game.h"
 #include "BMSParsing.h"
+
 #include <fstream>	
-#include <queue>
-#include <string>
-#include <iostream>
+#include "Album.h"
 
 BMSParsing::BMSParsing(const char* FileName)
 {
@@ -61,6 +61,10 @@ BMSParsing::BMSParsing(const char* FileName)
 
 		std::string sToken;
 
+
+		album = new Album();
+
+		
 		while (!q_data.empty())
 		{
 			// 
@@ -156,6 +160,7 @@ BMSParsing::BMSParsing(const char* FileName)
 					sToken = sRecord.substr(7);
 					sWavName = sToken;
 					std::cout << " Wav [ " << sWavIndex << " ] : " << sWavName << std::endl;
+					album->AddAlbumWav( sWavIndex,sWavName);
 				}
 				else
 				{
@@ -166,9 +171,9 @@ BMSParsing::BMSParsing(const char* FileName)
 					sChannelIndex = sToken;
 					sToken = sRecord.substr(7);
 					sMusicData = sToken;
-					std::cout << "MusicNode [ " << iMusicNode << " ] " <<
-						" ChannelIndex [ " << sChannelIndex << " ] : " <<
-						sMusicData << std::endl;
+					//std::cout << "MusicNode [ " << iMusicNode << " ] " <<
+				//		" ChannelIndex [ " << sChannelIndex << " ] : " <<
+					//	sMusicData << std::endl;
 					//1.
 					// 여기서 노트를 백터에 넣는다? 
 					// Node? -> 001/ 002/ 003/ 004 / 005/ ..../
@@ -176,14 +181,24 @@ BMSParsing::BMSParsing(const char* FileName)
 
 					// 2.
 					// 배경음 트랙 
+					album->AddMusicData(iMusicNode, sChannelIndex, sMusicData);
+
+					
 				}
 			}
 			q_data.pop();
 		}
 
+	
+		album->AlbumInfo(iPlayerCount, sGenre,sTitle, sArtist, 
+			iBpm, iPlayLevel, iRank, 
+			iTotal, sStageFile, sBmp, 
+			iBmpNumber, iDifficulty, sBanner,sSubArtist);
 
-		
+		//std::cout << album->GetQueTest().size() << std::endl;
+		//std::cout << album->GetMusicWaveList().size() << std::endl;
 	}
+	//
 }
 BMSParsing::~BMSParsing()
 {

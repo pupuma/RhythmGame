@@ -23,7 +23,7 @@ GameSystem* GameSystem::GetInstance()
 
 int GameSystem::GetWindowWidth()
 {
-	return 1024;
+	return 1280;
 }
 
 int GameSystem::GetWindowHeight()

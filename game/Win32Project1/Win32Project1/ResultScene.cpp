@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "Game.h"
 #include "Sprite.h"
 #include "ResultScene.h"
 #include "GameSystem.h"

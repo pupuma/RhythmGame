@@ -146,5 +146,8 @@
     <ClInclude Include="Track.h">
       <Filter>소스 파일\Object</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

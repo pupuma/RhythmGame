@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "Game.h"
 
 #include "DLinkedList.h"
 #include "GameSystem.h"

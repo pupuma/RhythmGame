@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "Game.h"
+ 
 #include "sdl_mixer.h"
 
 #include "GameSystem.h"

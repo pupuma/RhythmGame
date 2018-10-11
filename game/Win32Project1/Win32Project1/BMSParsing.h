@@ -1,16 +1,12 @@
 #pragma once
 
-#include <queue>
+class Album;
 
-struct tagmusicData
-{
-	
-};
 
 class BMSParsing
 {
 private:
-	
+	Album* album;
 public:
 	BMSParsing(const char* FileName);
 	~BMSParsing();

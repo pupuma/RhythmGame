@@ -7,6 +7,9 @@
 
 #include "Track.h"
 
+#include "Album.h"
+
+
 Track::Track()
 {
 	_score = 0;
